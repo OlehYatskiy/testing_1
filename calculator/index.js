@@ -3,7 +3,6 @@ const selectWidth = document.getElementById('select-width');
 const button = document.getElementById('button');
 
 button.addEventListener('click', function(e) {
-    debugger;
     console.log(calc(15));
 });
 
@@ -25,7 +24,6 @@ function calc(base, i = 0, arrInt = []) {
            newResult = {
                rem: Math.abs(rem - arr[i]),
                arr: arrInt.concat(int + 1)
-               // arr: arrInt.slice(0, -1).concat(int + 1)
            }
        } else {
            newResult = calc(rem,i + 1, arrInt.concat(int));
@@ -34,12 +32,8 @@ function calc(base, i = 0, arrInt = []) {
             let result = newResult;
             newResult = calc(base, i + 1);
 
-            // if (newResult <= result.rem)
             return newResult;
-            // return {
-            //     rem: newResult.rem,
-            //     arr: arrInt
-            // }
+
         } else {
             return {
                 rem: rem,
