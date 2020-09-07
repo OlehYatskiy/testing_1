@@ -1,14 +1,25 @@
-
+const popup = document.getElementById('popup');
 const selectLength = document.getElementById('select-length');
 const selectWidth = document.getElementById('select-width');
 const button = document.getElementById('button');
 
 button.addEventListener('click', function(e) {
     const result = calc(selectLength.value * selectWidth.value / 4);
-    value =
+    const resultArr = arr.length > result.arr.length ? result.arr.concat(0) : result.arr;
+
+    let ansver = ''
+    arr.forEach(function (el, i) {
+       ansver = i === 0 ? ansver : ', ' + ansver;
+       ansver = resultArr[i] + ' packs of ' + el + 'pcs' + ansver;
+    });
+
+    popup.firstChild.data = 'You will need ' + ansver + '.';
     popup.classList.add('active');
 });
 
+popup.lastElementChild.addEventListener('click', function (e) {
+   e.target.parentElement.classList.remove('active');
+});
 
 arr = [8, 6];
 
@@ -19,7 +30,7 @@ function compare(newResult, result) {
 function calc(base, i = 0, arrInt = []) {
        const rem = base % arr[i];
        const int = (base - rem) / arr[i];
-       let result = {
+       const result = {
            rem: rem,
            arr: arrInt.concat(int)
        }

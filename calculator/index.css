@@ -11,6 +11,41 @@
     font-family: "Free Courier", monospace;
 }
 
+.label {
+    margin: 50px 40px;
+    grid-column: span 1;
+    background: #d0cdc9;
+    border: 3px solid #676767;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 5px;
+    overflow: hidden;
+}
+
+.label .select {
+    color: white;
+    margin-left: auto;
+    height: 100%;
+    background: #676767;
+    cursor: pointer;
+}
+
+.button {
+    height: 50px;
+    width: 70%;
+    grid-column: span 2;
+    background: #676767;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: inset 0px 2px 5px 0px #000000;
+}
+
 .popup {
     z-index: 100;
     position: fixed;
@@ -21,6 +56,7 @@
     width: 50%;
     height: 200px;
     display: none;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -28,13 +64,6 @@
     border-radius: 3px;
     background: white;
     box-shadow: 2px 4px 0.5rem 0.1rem #d0cdc9;
-}
-
-.popup-text {
-    width: 90%;
-    height: 50%;
-    display: flex;
-    align-items: center;
 }
 
 .popup .popup-btn {
@@ -54,44 +83,13 @@
     width: 400px;
     height: 300px;
     display: grid;
+    justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 50% 50%;
     box-shadow: 2px 4px 0.5rem 0.1rem #d0cdc9;
 }
 
-.label {
-    margin: 50px 40px;
-    grid-column: span 1;
-    background: #d0cdc9;
-    border: 3px solid #676767;
-    border-radius: 3px;
+.active {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 5px;
-    overflow: hidden;
 }
 
-.select {
-    color: white;
-    margin-left: auto;
-    height: 100%;
-    background: #676767;
-    cursor: pointer;
-}
-
-.button {
-    margin: auto;
-    margin-top: 0;
-    height: 50px;
-    width: 70%;
-    grid-column: span 2;
-    background: #676767;
-    border-radius: 3px;
-    color: white;
-    cursor: pointer;
-}
-
-.button:active {
-    box-shadow: inset 0px 2px 5px 0px #000000;
-}
