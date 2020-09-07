@@ -7,6 +7,7 @@
 @focusColorBlue: #00a0bc;
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
@@ -15,6 +16,8 @@
   margin: 0;
   padding: 0;
   outline: 0;
+  -webkit-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
 }
 
@@ -36,8 +39,14 @@ body {
 
 .container {
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background: no-repeat url("../img/1.png");
   background-size: cover;
@@ -54,6 +63,7 @@ body {
   .container-form {
     position: relative;
     clear: both;
+    display: -ms-grid;
     display: grid;
     background: #F5F5F5;
     max-width: 51.7rem;
@@ -64,13 +74,18 @@ body {
     grid-template-rows: 7.5rem auto;
 
     .form-header {
+      -ms-grid-column-span: 2;
       grid-column: span 2;
       background: #34b7ce;
       margin: -1px;
       overflow: hidden;
       border-top-left-radius: @formBorderRadius;
       border-top-right-radius: @formBorderRadius;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       padding: 1.7rem;
 
@@ -79,6 +94,7 @@ body {
         height: @formIconSize;
         border-radius: 100%;
         background: #259cb1 center / 50% no-repeat url("../img/icons/Compose_-_alt.svg");
+        -ms-flex-negative: 0;
         flex-shrink: 0;
       }
 
@@ -104,14 +120,32 @@ body {
     }
 
     .btn:not(:disabled):hover {
+      -webkit-box-shadow: 0 0 1rem @formBorderRadius #d0cdc9;
       box-shadow: 0 0 1rem @formBorderRadius #d0cdc9;
     }
 
     .login-form {
       padding: 1.8rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
 
+      ::-webkit-input-placeholder {
+        color: #e9e9e9;
+      }
+      ::-moz-placeholder {
+        color: #e9e9e9;
+      }
+      :-ms-input-placeholder {
+        color: #e9e9e9;
+      }
+      ::-ms-input-placeholder {
+        color: #e9e9e9;
+      }
       ::placeholder {
         color: #e9e9e9;
       }
@@ -121,6 +155,8 @@ body {
         height: 1px;
         margin-bottom: 3rem;
         margin-top: 1.8rem;
+        background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(@borderColorLightGrey), to(rgba(0, 0, 0, 0)));
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), @borderColorLightGrey, rgba(0, 0, 0, 0));
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), @borderColorLightGrey, rgba(0, 0, 0, 0));
         position: relative;
       }
@@ -160,7 +196,11 @@ body {
       }
 
       .login-form-bottombox {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
         align-items: baseline;
 
         .login-form-checkbox {
@@ -171,9 +211,16 @@ body {
 
         .login-form-label {
           position: relative;
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
           display: inline-flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           margin-right: 3px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
           user-select: none;
           color: #cbcbcb;
           font-size: 14px;
@@ -185,7 +232,10 @@ body {
           width: 1em;
           height: 1em;
           padding: .2em;
+          -ms-flex-negative: 0;
           flex-shrink: 0;
+          -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
           flex-grow: 0;
           background-color: #e1e1e1;
           border-radius: 0.25em;
@@ -197,11 +247,13 @@ body {
 
         .login-form-label:hover::after {
           content: attr(data-title);
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           position: absolute;
           z-index: 100;
           background: @colorWhite;
           border-radius: 8px;
+          -webkit-box-shadow: 0 4px 9px 1px rgba(0, 0, 0, 0.15);
           box-shadow: 0 4px 9px 1px rgba(0, 0, 0, 0.15);
           top: 2.3rem;
           right: 3rem;
@@ -229,6 +281,7 @@ body {
         }
         /* on focus checkbox */
         .login-form-checkbox:focus+label::before {
+          -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
           box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
         }
         /* on focus checkbox, but not checked */
@@ -238,6 +291,7 @@ body {
 
         .login-form-btn {
           background-color: #00a0bc;
+          background-image: -o-linear-gradient(120deg, #4fb6e2 26%, #004c6c 100%);
           background-image: linear-gradient(-30deg, #4fb6e2 26%, #004c6c 100%);
         }
       }
@@ -259,7 +313,12 @@ body {
       position: relative;
       padding: 1.85rem;
       padding-top: 1.5rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
 
       .register-form-h3 {
@@ -317,11 +376,13 @@ body {
       .register-form-btn {
         margin-top: .5rem;
         background-color: #ffc334;
+        background-image: -o-linear-gradient(120deg, #ffb400 26%, #aa7800 100%);
         background-image: linear-gradient(-30deg, #ffb400 26%, #aa7800 100%);
       }
     }
 
     .grid-column {
+      -ms-grid-column-span: 1;
       grid-column: span 1;
     }
   }

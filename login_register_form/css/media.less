@@ -60,7 +60,12 @@
     .container-form {
       .login-form {
         .login-form-bottombox{
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
           justify-content: space-between;
           height: 7rem;
         }
@@ -72,6 +77,8 @@
 /*mobile*/
 @media screen and (max-width: 428px) {
   .container {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
 
     .form-outer-h2 {
@@ -83,7 +90,12 @@
     }
 
     .container-form {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       border: none;
 
