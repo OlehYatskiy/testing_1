@@ -1,6 +1,10 @@
 @formBorderRadius: .5rem;
 @formIconSize: 4.6rem;
+
 @colorWhite: #ffffff;
+@borderColorLightGrey: rgba(0, 0, 0, 0.1);
+@inputColorGrey: #676767;
+@focusColorBlue: #00a0bc;
 
 * {
   box-sizing: border-box;
@@ -31,28 +35,20 @@ body {
 }
 
 .container {
-  position: relative;
-  font-family: sans-serif;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .container-inner {
-    position: absolute;
-    z-index: -100;
-    width: 100%;
-    height: 100%;
-    background: 50% -40px no-repeat url("../img/1.png");
-  }
+  background: no-repeat url("../img/1.png");
+  background-size: cover;
+  font-family: "Source Sans Pro - Semibold", sans-serif;
+  font-weight: 400;
 
   .form-outer-h2 {
     float: right;
     margin-right: 7rem;
     margin-bottom: 3.5rem;
     color: #b0b0b0;
-    font-family: "Source Sans Pro - Semibold", sans-serif;
-    font-weight: 400;
   }
 
   .container-form {
@@ -89,8 +85,6 @@ body {
       .form-header-label {
         margin-left: .9em;
         color: @colorWhite;
-        font-family: "Source Sans Pro - Semibold", sans-serif;
-        font-weight: 400;
       }
     }
 
@@ -98,7 +92,7 @@ body {
       margin-left: auto;
       width: 9.6rem;
       padding: .6rem 2.4rem;
-      border-radius: 0.5rem;
+      border-radius: @formBorderRadius;
       font-family: "Source Sans Pro - Semibold", sans-serif;
       font-size: 22px;
       color: @colorWhite;
@@ -110,7 +104,7 @@ body {
     }
 
     .btn:not(:disabled):hover {
-      box-shadow: 0 0 1rem 0.5rem #d0cdc9;
+      box-shadow: 0 0 1rem @formBorderRadius #d0cdc9;
     }
 
     .login-form {
@@ -127,7 +121,7 @@ body {
         height: 1px;
         margin-bottom: 3rem;
         margin-top: 1.8rem;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), @borderColorLightGrey, rgba(0, 0, 0, 0));
         position: relative;
       }
 
@@ -138,12 +132,11 @@ body {
         margin-left: -2.2rem;
         width: 2rem;
         height: 2rem;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        border: 1px solid @borderColorLightGrey;
         border-radius: 100%;
         background-color: #eaeaea;
         content: "/";
         color: #bbbbbb;
-        font-family: "Source Sans Pro - Semibold", sans-serif;
         font-size: 1.3rem;
         text-align: center;
         line-height: 2rem;
@@ -156,16 +149,14 @@ body {
         margin-bottom: 2rem;
         padding: 1rem 3.4rem;
         background: @colorWhite;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 0.5rem;
-        color: #676767;
-        font-family: "Source Sans Pro - Semibold", sans-serif;
+        border: 1px solid @borderColorLightGrey;
+        border-radius: @formBorderRadius;
+        color: @inputColorGrey;
         font-size: 22px;
-        font-weight: 400;
       }
 
       .login-form-input:focus {
-          border: 1px solid #00a0bc;
+          border: 1px solid @focusColorBlue;
       }
 
       .login-form-bottombox {
@@ -185,9 +176,7 @@ body {
           margin-right: 3px;
           user-select: none;
           color: #cbcbcb;
-          font-family: "Source Sans Pro - Semibold", sans-serif;
           font-size: 14px;
-          font-weight: 400;
         }
 
         .login-form-label::before {
@@ -240,7 +229,7 @@ body {
         }
         /* on focus checkbox */
         .login-form-checkbox:focus+label::before {
-          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
         }
         /* on focus checkbox, but not checked */
         .login-form-checkbox:focus:not(:checked)+label::before {
@@ -263,7 +252,7 @@ body {
       content: '';
       height: 68%;
       width: 1px;
-      background: rgba(0, 0, 0, 0.1);
+      background: @borderColorLightGrey;
     }
 
     .register-form {
@@ -275,22 +264,19 @@ body {
 
       .register-form-h3 {
         margin-bottom: 1.5rem;
-        color: #676767;
-        font-family: "Source Sans Pro - Semibold", sans-serif;
-        font-weight: 400;
+        color: @inputColorGrey;
       }
 
       .register-form-box {
         margin-bottom: 1.3rem;
+        font-family: "Source Sans Pro", sans-serif;
 
         .register-form-label {
           position: relative;
           display: block;
           margin-bottom: 1rem;
-          color: #676767;
-          font-family: "Source Sans Pro", sans-serif;
+          color: @inputColorGrey;
           font-size: 16px;
-          font-weight: 400;
         }
 
         .register-form-label::after {
@@ -316,17 +302,15 @@ body {
           width: 100%;
           padding-left: 2em;
           padding-right: 3em;
-          color: #676767;
-          font-family: "Source Sans Pro", sans-serif;
+          color: @inputColorGrey;
           font-size: 16px;
-          font-weight: 400;
           background: @colorWhite;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          border-radius: 0.5rem;
+          border: 1px solid @borderColorLightGrey;
+          border-radius: @formBorderRadius;
         }
 
         .register-form-input:focus {
-          border: 1px solid #00a0bc;
+          border: 1px solid @focusColorBlue;
         }
       }
 
