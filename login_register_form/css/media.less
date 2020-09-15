@@ -100,11 +100,23 @@
       flex-direction: column;
       border: none;
 
-      .form-header-label {
-        font-size: 18px;
+      .form-header {
+        margin: 0;
+
+        .form-header-label {
+          font-size: 18px;
+        }
       }
 
       .login-form {
+        .login-form-topline {
+          width: 100%;
+        }
+
+        .login-form-topline::before {
+          margin-left: 0;
+        }
+
         .login-form-bottombox {
           .login-form-label:hover::after {
             width: 146%;
